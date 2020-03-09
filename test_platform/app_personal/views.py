@@ -34,7 +34,3 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect("/")
-
-@login_required
-def manage(request):
-    return render(request, "manage.html")
