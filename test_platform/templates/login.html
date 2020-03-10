@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>登陆页面</title>
+{% extends "base.html" %}
+{% block base %}
 
-    <!--方式一-->
-    {% load static %}
-    <link href="{% static 'css/theme.css' %}" rel='stylesheet' type='text/css'/>
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
-
-    <!--方式二-->
-    <!-- <link href="/static/css/theme.css" rel='stylesheet'  type='text/css'/>-->
-    <!-- <link rel="shortcut icon" href="/static/favicon.ico"/>-->
-
-    <!--    <link href='https://htmlstream.com/preview/space-v1.5.0/assets/css/theme.css' rel='stylesheet'  type='text/css' />-->
-
-</head>
-<body>
 <main id="content" role="main">
     <!-- Hero Section -->
     <div class="gradient-overlay-half-dark-v3 bg-img-hero">
@@ -70,8 +54,6 @@
         </div>
         <!-- End Main Content -->
     </div>
-
 </main>
 
-</body>
-</html>
+{% endblock %}

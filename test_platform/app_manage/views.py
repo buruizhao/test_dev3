@@ -12,3 +12,6 @@ def manage(request):
     return render(request, "manage.html", {
         "projects":project_list
     })
+
+def add_project(request):
+    return render(request, "project_add.html")

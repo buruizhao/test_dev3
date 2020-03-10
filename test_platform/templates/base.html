@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试平台</title>
+    <!--方式一-->
+    {% load static %}
+    <link href="{% static 'css/theme.css' %}" rel='stylesheet' type='text/css'/>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+    <link href="{% static 'css/classic.css' %}" rel='stylesheet' type='text/css'/>
+
+    <!--方式二-->
+    <!-- <link href="/static/css/theme.css" rel='stylesheet'  type='text/css'/>-->
+    <!-- <link rel="shortcut icon" href="/static/favicon.ico"/>-->
+
+    <!--    <link href='https://htmlstream.com/preview/space-v1.5.0/assets/css/theme.css' rel='stylesheet'  type='text/css' />-->
+</head>
+<body>
+{% block base %}
+
+{% endblock %}
+
+</body>
+</html>

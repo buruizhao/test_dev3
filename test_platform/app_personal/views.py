@@ -24,7 +24,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user) #记录用户的登陆状态
-            return HttpResponseRedirect("/manage/")
+            return HttpResponseRedirect("/project/")
         else:
             return render(request, "login.html", {
                 "msg":"用户名或密码错误！"
