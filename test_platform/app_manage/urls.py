@@ -5,5 +5,6 @@ urlpatterns = [
     #项目管理
     path('', views.manage),
     path('add', views.add_project),
+    path('list', views.list_project),
 
 ]

@@ -8,8 +8,16 @@ def manage(request):
     """
     接口管理
     """
+    return render(request, "manage.html")
+
+def list_project(request):
+    """
+     项目管理
+    :param request:
+    :return:
+    """
     project_list = Project.objects.all()
-    return render(request, "manage.html", {
+    return render(request, "project_list.html", {
         "projects":project_list
     })
 

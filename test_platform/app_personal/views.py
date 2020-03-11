@@ -23,7 +23,8 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request, user) #记录用户的登陆状态
+            #记录用户的登陆状态
+            auth.login(request, user)
             return HttpResponseRedirect("/project/")
         else:
             return render(request, "login.html", {
