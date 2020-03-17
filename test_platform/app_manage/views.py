@@ -42,16 +42,13 @@ def add_project(request):
 
 def edit_project(request, pid):
     """ 项目修改"""
-    print("pid", pid)
     if request.method == 'POST':
-        pass
+        form = ProjectEditForm(request.POST)
     else:
         if pid:
-            p = Project.objects.filter(id=pid)
+            p = Project.objects.get(id=pid)
             form = ProjectEditForm(instance=p)
         else:
             form = ProjectForm()
 
-    return render(request, "project_edit.html", {
-        "form": form
-    })
+    return render(request, "project_edit.html", {'form': form})
