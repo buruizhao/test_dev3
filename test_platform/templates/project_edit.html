@@ -16,9 +16,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-10" style="margin-left: 20px;margin-right: 20px;width: 80%">
+                        <div class="col-sm-10" style="margin-left: 20px;margin-right: 20px">
 
-                            <form action="/project/edit/{{form.id}}" method="post">
+                            <form action="/project/edit/{{id}}/" method="post">
                                 {% csrf_token %}
                                 {% for forms in form %}
                                 <p>
@@ -27,7 +27,7 @@
                                 </p>
                                 {% endfor %}
 
-                                <input type="submit" class="btn btn-primary" value="保存">
+                                <input type="submit" class="btn btn-primary" value="更新">
                             </form>
 
                         </div>
@@ -38,10 +38,37 @@
     </div>
 </div>
 
-</div>
-</main>
+<style>
+    input[name='name'] {
+        display: block;
+        width: 80%;
+        height: calc(1.8125rem + 2px);
+        padding: .25rem .7rem;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .2rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
 
-</div>
-</div>
+    textarea[name='remark']  {
+        display: block;
+        width: 80%;
+        padding: .25rem .7rem;
+        font-size: .875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .2rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+</style>
 
 {% endblock %}

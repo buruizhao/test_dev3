@@ -8,15 +8,11 @@ from .forms import ProjectForm, ProjectEditForm
 # Create your views here.
 @login_required
 # def manage(request):
-#     """
-#     接口管理
-#     """
+#     """接口管理"""
 #     return render(request, "manage.html")
 
 def manage(request):
-    """
-     项目管理
-    """
+    """项目管理"""
     project_list = Project.objects.all()
     return render(request, "project_list.html", {
         "projects": project_list
@@ -43,7 +39,20 @@ def add_project(request):
 def edit_project(request, pid):
     """ 项目修改"""
     if request.method == 'POST':
-        form = ProjectEditForm(request.POST)
+        form = ProjectForm(request.POST)
+
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            remark = form.cleaned_data['remark']
+            status = form.cleaned_data['status']
+
+            p = Project.objects.get(id=pid)
+            p.name = name
+            p.remark = remark
+            p.status = status
+            p.save()
+
+        return HttpResponseRedirect("/project/")
     else:
         if pid:
             p = Project.objects.get(id=pid)
@@ -51,4 +60,12 @@ def edit_project(request, pid):
         else:
             form = ProjectForm()
 
-    return render(request, "project_edit.html", {'form': form})
+        return render(request, "project_edit.html", {'form': form, 'id': pid})
+
+
+def del_project(request, pid):
+    if request.method == "GET":
+        Project.objects.get(id=pid).delete()
+        return HttpResponseRedirect("/project/")
+    else:
+        return HttpResponseRedirect("/project/")

@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <div class="col-sm-10" style="margin-left: 20px;margin-right: 20px;width: 80%">
 
-                            <form action="/project/add" method="post">
+                            <form action="/project/add/" method="post">
                                 {% csrf_token %}
                                 {% for forms in form %}
                                 <p>
@@ -36,12 +36,6 @@
             </div>
         </div>
     </div>
-</div>
-
-</div>
-</main>
-
-</div>
 </div>
 
 {% endblock %}
