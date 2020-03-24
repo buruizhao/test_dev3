@@ -1,0 +1,67 @@
+{% extends "manage.html" %}
+{% block manage %}
+
+<div class="row">
+    <div class="card flex-fill">
+        <div class="card-header">
+            <h5 class="card-title mb-0" style="float: left">模块管理</h5>
+            <button onclick="module_add()" type="button" class="btn btn-primary" style="float: right">创建</button>
+            <!-- <a href="/login/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>-->
+
+        </div>
+        <div id="datatables-dashboard-projects_wrapper"
+             class="dataTables_wrapper dt-bootstrap4 no-footer">
+            <div class="row">
+                <div class="col-sm-12 col-md-6"></div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="datatables-dashboard-projects"
+                           class="table table-striped my-0 dataTable no-footer" role="grid"
+                           aria-describedby="datatables-dashboard-projects_info">
+                        <thead>
+                        <tr role="row">
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>备注</th>
+                            <th>关联项目</th>
+                            <th>创建时间</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for m in modules %}
+                        <tr role="row" class="odd">
+                            <td>{{m.id}}</td>
+                            <td>{{m.name}}</td>
+                            <td>{{m.remark}}</td>
+                            <td>{{m.project}}</td>
+                            <td>{{m.create_time |date:"Y-m-d H:i:s"}}</td>
+                            <td>{{m.update_time |date:"Y-m-d H:i:s"}}</td>
+                            <td>
+                                <a href="/manage/module_edit/{{m.id}}/">编辑</a>
+                                <a href="/manage/module_del/{{m.id}}">删除</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function module_add()
+    {
+        window.location.href="/manage/module_add/"; //在原tab页签打开
+        // window.open("/project/add");  //打开新tab页签
+    }
+</script>
+
+{% endblock %}

@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <div class="col-sm-10" style="margin-left: 20px;margin-right: 20px">
 
-                            <form action="/project/edit/{{id}}/" method="post">
+                            <form action="/manage/project_edit/{{id}}/" method="post">
                                 {% csrf_token %}
                                 {% for forms in form %}
                                 <p>

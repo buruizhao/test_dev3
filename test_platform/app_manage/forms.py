@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from app_manage.models import Project
+from app_manage.models import Project, Module
 
 
 class ProjectForm(forms.Form):
@@ -13,3 +13,9 @@ class ProjectEditForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['name', 'remark', 'status']
+
+
+class ModuleEditForm(forms.ModelForm):
+    class Meta:
+        model = Module
+        fields = ['project', 'name', 'remark']

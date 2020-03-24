@@ -19,3 +19,6 @@ class Module(models.Model):
     remark = models.TextField("备注", default="")
     create_time = models.DateTimeField("创建时间", auto_now_add=True)
     update_time = models.DateTimeField("更新时间", auto_now=True)
+
+    def __str__(self):
+        return self.name

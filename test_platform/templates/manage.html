@@ -24,8 +24,8 @@
                 </li>
 
                 <!--                项目管理-->
-                <li class="sidebar-item active">
-                    <a href="/project/" class="sidebar-link collapsed" aria-expanded="false">
+                <li class="sidebar-item">
+                    <a href="/manage/project_list/" class="sidebar-link collapsed" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-sliders align-middle">
@@ -45,7 +45,7 @@
 
                 <!--                模块管理-->
                 <li class="sidebar-item">
-                    <a href="/model/" class="sidebar-link collapsed">
+                    <a href="/manage/module_list/" class="sidebar-link collapsed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-layout align-middle">
@@ -59,7 +59,7 @@
 
                 <!--                用例管理-->
                 <li class="sidebar-item">
-                    <a href="#form-plugins" data-toggle="collapse" class="sidebar-link collapsed">
+                    <a href="#form-plugins" class="sidebar-link collapsed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-check-square align-middle">
@@ -86,7 +86,7 @@
 
                 <!--                Mock Server-->
                 <li class="sidebar-item">
-                    <a href="#documentation" data-toggle="collapse" class="sidebar-link collapsed">
+                    <a href="#documentation" class="sidebar-link collapsed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-book-open align-middle">
@@ -99,7 +99,7 @@
 
                 <!--                测试工具-->
                 <li class="sidebar-item">
-                    <a href="#ui" data-toggle="collapse" class="sidebar-link collapsed">
+                    <a href="#ui" class="sidebar-link collapsed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-grid align-middle">
@@ -139,13 +139,11 @@
                             </svg>
                         </a>
 
-                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                            <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded-circle mr-1"
-                                 alt="admin"> <span class="text-dark">admin</span>
+                        <a class="nav-link d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                            <img src="/static/img/user.svg" class="avatar img-fluid rounded-circle mr-1"
+                                 alt=""> <span class="text-dark">{{ user }}</span>
                         </a>
-
                         <a href="/logout/">退出</a>
-
                     </li>
                 </ul>
             </div>
@@ -166,14 +164,6 @@
 
             </div>
         </main>
-        <script>
-            function add()
-            {
-                window.location.href="/project/add"; //在原tab页签打开
-                // window.open("/project/add");  //打开新tab页签
-            }
-        </script>
-
     </div>
 </div>
 
